@@ -35,14 +35,20 @@ window.addEventListener("click", function(e) {
 // dark mode toggle
 
 const darkToggle = document.querySelector("#dark-toggle");
+const lightFoto = document.querySelector(".light-foto");
+const darkFoto = document.querySelector(".dark-foto");
 const html = document.querySelector("html");
 
 darkToggle.addEventListener("click", function() {
     if (darkToggle.checked) {
         html.classList.add("dark");
+        lightFoto.classList.add("hidden");
+        darkFoto.classList.remove("hidden");
         localStorage.theme = "dark";
     } else {
         html.classList.remove("dark");
+        lightFoto.classList.remove("hidden");
+        darkFoto.classList.add("hidden");
         localStorage.theme = "light";
     }
 });
